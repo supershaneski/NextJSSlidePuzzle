@@ -1,42 +1,6 @@
 import React from 'react';
 import SlidePuzzle from '../components/slidepuzzle';
 
-class Clock extends React.Component {
-    constructor() {
-        super()
-        this.timer = null;
-        this.state = {
-            time: new Date()
-        }
-    }
-    componentDidMount() {
-        this.timer = setInterval(() => {
-            this.setState({
-                time: new Date()
-            })
-        }, 1000)
-    }
-    componentWillUnmount() {
-        clearInterval(this.timer)
-    }
-    render() {
-        return (
-            <>
-            <span>
-            { this.state.time.toLocaleTimeString() }
-            </span>
-            <style jsx>
-                {`
-                span {
-                    color: #ccc; /*#dedede;*/
-                }
-                `}
-            </style>
-            </>
-        )
-    }
-}
-
 const appLoader = (containerElement) => {
     return {
         width: containerElement.offsetWidth,
@@ -68,7 +32,6 @@ class Index extends React.Component {
                 <SlidePuzzle size={size} count={9} />
             }
             </div>
-            <Clock />
             <style jsx>
                 {`
                 div {
