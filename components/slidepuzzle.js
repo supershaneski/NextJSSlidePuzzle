@@ -3,14 +3,6 @@ import Lib from '../lib/utils';
 import Block from './block';
 import ImageList from '../data/list.json';
 
-const AppLoader = (containerElement) => {
-    const { offsetWidth, offsetHeight } = containerElement;
-    return {
-        width: offsetWidth,
-        height: offsetHeight
-    }
-}
-
 class SlidePuzzle extends React.Component {
     constructor(props) {
         super(props)
@@ -73,10 +65,11 @@ class SlidePuzzle extends React.Component {
             isTryAgain: false
         }
         
-        this.initPuzzle.bind(this);
-        this.resetGame.bind(this);
-        this.checkPuzzle.bind(this)
-        this.clickBlock.bind(this);
+        this.initPuzzle = this.initPuzzle.bind(this);
+        this.resetGame = this.resetGame.bind(this);
+        this.resetPuzzle = this.resetPuzzle.bind(this);
+        this.checkPuzzle = this.checkPuzzle.bind(this)
+        this.clickBlock = this.clickBlock.bind(this);
         
     }
     
@@ -280,7 +273,7 @@ class SlidePuzzle extends React.Component {
                     }
                 </div>
                 <button 
-                onClick={this.resetPuzzle.bind(this)} 
+                onClick={this.resetPuzzle} 
                 style={{ display: `${buttonDisplay}` }}>
                 &#8635; Try Again
                 </button>

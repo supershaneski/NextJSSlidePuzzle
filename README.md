@@ -4,6 +4,9 @@ This project is an exercise in my study of NextJS and ReactJS.<br>
 The main objective is to use HTML Canvas in React application.
 
 ## Description
+This is a slide puzzle application.
+
+![Puzzle](docs/screenshot.png)
 
 * The images are taken randomly from a JSON list.
 
